@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ContabilFlow - Gestão Contábil de Alta Performance</title>
+    <meta name="description" content="Sistema Inteligente de Gestão para Escritórios de Contabilidade com IA Gemini." />
+    
+    <!-- Configuração do Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+            colors: {
+              gray: {
+                50: '#F9FAFB', 100: '#F3F4F6', 200: '#E5E7EB', 300: '#D1D5DB',
+                400: '#A1A1AA', 500: '#71717A', 600: '#52525B', 700: '#3F3F46',
+                800: '#27272A', 900: '#18181B', 950: '#09090B',
+              },
+              primary: {
+                50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD',
+                400: '#A78BFA', 500: '#6366F1', 600: '#4F46E5', 700: '#4338CA',
+                800: '#3730A3', 900: '#312E81', 950: '#1E1B4B',
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'slide-up': 'slideUp 0.4s ease-out forwards',
+              'slide-in-right': 'slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'zoom-in': 'zoomIn 0.3s ease-out forwards',
+              'float': 'float 3s ease-in-out infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+            },
+            keyframes: {
+              fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+              slideUp: { '0%': { transform: 'translateY(10px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+              slideInRight: { '0%': { transform: 'translateX(20px)', opacity: '0' }, '100%': { transform: 'translateX(0)', opacity: '1' } },
+              zoomIn: { '0%': { transform: 'scale(0.97)', opacity: '0' }, '100%': { transform: 'scale(1)', opacity: '1' } },
+              float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-5px)' } },
+              shimmer: { '100%': { transform: 'translateX(100%)' } }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+      .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+      .dark .glass { background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.05); }
+      select option { background-color: #18181b; color: #ffffff; }
+      .hover-glow:hover { box-shadow: 0 0 20px rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.4); }
+      html { scroll-behavior: smooth; height: 100%; }
+      body { min-height: 100%; display: flex; flex-direction: column; }
+      #root { flex: 1; display: flex; flex-direction: column; }
+    </style>
+
+    <!-- Google API Scripts -->
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+    <script async defer src="https://accounts.google.com/gsi/client"></script>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://aistudiocdn.com/react@^19.2.1",
+        "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
+        "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.1/client",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+        "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+        "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+        "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1",
+        "jspdf-autotable": "https://aistudiocdn.com/jspdf-autotable@^3.5.29",
+        "xlsx": "https://esm.sh/xlsx@0.18.5",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+        "react/": "https://esm.sh/react@^19.2.1/"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-500">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "ContabilFlow Premium CRM",
+  "description": "Sistema de Gestão Contábil de Alta Performance com IA Gemini 2.5 e Integração Google Workspace.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
